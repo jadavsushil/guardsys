@@ -60,16 +60,16 @@ class UserController extends Controller
     
     public function update(Request $request, User $user)
     {
+        
         $request->validate([
             'name'      =>  'required',
             'phone'      =>  'required',
             'email'     =>  'required|email',
-            'image'     =>  'image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'image'     =>  'image|mimes:jpg,png,jpeg,gif,svg'
         ]);
-
+        
         if ($request->hasFile('image')) {
             $file_name = time() . '.' . request()->image->getClientOriginalExtension();
-
             request()->image->move(public_path('images'), $file_name);
         }else{
             $file_name  = $request->hidden_user_image;
