@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Information</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+	<title>User Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 	<script src="{{ asset('assets/jquery.validate.js') }}"></script>
     <script>
 	$().ready(function() {
@@ -53,8 +54,34 @@
         <h1 class="text-primary mt-3 mb-4 text-center"><b>User Information</b></h1>
         
         @yield('content')
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+			<script>
+
+			$(function () {
+						
+				$(".gfgselect").click(function () {
+					var id = $(this).attr("#data-id");
+					console.log(id);
+					var user_id = $(this).parents("tr").find(".usid").text();
+					var user_name = $(this).parents("tr").find(".usname").text();
+					var user_email = $(this).parents("tr").find(".usemail").text();
+					var user_phone = $(this).parents("tr").find(".usphone").text();
+					document.getElementById("user_name").innerHTML=user_name;
+					document.getElementById("user_email").innerHTML=user_email;
+					document.getElementById("user_phone").innerHTML=user_phone;
+					$("#number").val(user_phone);
+					$("#user_id").val(user_id)
+					
+				});
+			});
+		</script>
+		
+		@stack('scripts')
         
     </div>
-    
+	
+
+		
 </body>
 </html>

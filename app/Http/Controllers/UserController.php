@@ -91,11 +91,21 @@ class UserController extends Controller
     }
 
    
-    public function destroy(User $user)
+    public function destroy()
     {
-        $user->delete();
+        //$user->delete();
 
-        return redirect()->route('users.index')->with('success', 'User Data deleted successfully');
+        //return redirect()->route('users.index')->with('success', 'User Data deleted successfully');
+    }
+
+    public function delete(Request $request){
+        
+        $user = User::find($request->id)->delete();
+        if ($user) {
+            return response()->json(['success'=>'User deleted successfully']);            
+        } else {
+            return response()->json(['success'=>'User deletion failed!']);
+        }
     }
 
     public function adduserapi(Request $request)
