@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 
 Route::resource('users', UserController::class);
+Route::post('users/delete', [UserController::class,'delete'])->name('users.delete');
