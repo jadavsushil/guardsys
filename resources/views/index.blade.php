@@ -118,7 +118,7 @@
 						<div class="text-center">
 							
 							<a href="#" id="getcode" class="btn btn-dark btn-sm ">Send OTP</a>
-							<a href="#" class="btn btn-dark btn-sm btn-block" id="verifPhNum">Verify Phone No</a>
+							<a href="#" class="btn btn-dark btn-sm btn-block" id="verifPhNum" style="display:none;">Verify Phone No</a>
 						</div>
 
 					</div>
@@ -153,9 +153,9 @@
 			success: function (response) {
 				
 				if(response.success!==undefined && response.success!==''){
-					toastr.success('response.success');
+					toastr.success(response.success);
 				}else{
-					toastr.error('response.error');
+					toastr.error(response.error);
 				}
 				setTimeout(function(){
 				window.location.reload(1);
