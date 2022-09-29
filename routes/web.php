@@ -14,10 +14,6 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::resource('users', UserController::class);
+Route::get('/', [UserController::class, 'index'])->name('users.index');
+Route::resource('users', UserController::class)->except(['index', 'delete']);
 Route::post('users/delete', [UserController::class,'delete'])->name('users.delete');

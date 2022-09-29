@@ -47,7 +47,7 @@
 				<div class="col-sm-8">
 					<input type="text" name="phone" id="number" class="form-control" placeholder="Enter user mobile number with state code" required />
 					<div id="time_for_otp" class="text-danger"  style="display:none;">
-						<div>Time left <span id="timer"></span> sec </div>
+						<div>Time left <span id="timer"></span> minute </div>
 					</div>
 				</div>
 				<div class="col-sm-2">
@@ -64,7 +64,7 @@
 
 			<div class="text-center">
 				<input type="submit" class="btn btn-primary btn-sm" value="Submit" id="submit_btn"  style="display:none;"/>
-				<a href="#" class="btn btn-dark btn-sm btn-block" id="verifPhNum">Verify Phone No</a>
+				<a href="#" class="btn btn-dark btn-sm btn-block" id="verifPhNum" style="display:none;">Verify Phone No</a>
 			</div>	
 			
 	
