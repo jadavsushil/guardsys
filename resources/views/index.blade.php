@@ -151,8 +151,17 @@
 			headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
 			data: {'id': id},
 			success: function (response) {
-				window.location.reload();
-				console.log('response',response);
+				
+				if(response.success!==undefined && response.success!==''){
+					toastr.success('response.success');
+				}else{
+					toastr.error('response.error');
+				}
+				setTimeout(function(){
+				window.location.reload(1);
+				}, 2000);
+				
+				
 			},
 			error: function (response) {
 				window.location.reload();

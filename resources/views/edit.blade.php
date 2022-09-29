@@ -3,7 +3,14 @@
 @section('content')
 
 <div class="card">
-	<div class="card-header">Edit User</div>
+	<div class="card-header">
+		<div class="row">
+			<div class="col col-md-6"><b>Edit User</b></div>
+			<div class="col col-md-6">
+				<a href="{{ route('users.index') }}" class="btn btn-primary btn-sm float-end">View All</a>
+			</div>
+		</div>
+	</div>
 	<div class="card-body">
 		<form id="userForm" method="post" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
 			@csrf
