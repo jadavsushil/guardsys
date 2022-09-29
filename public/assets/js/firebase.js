@@ -60,7 +60,8 @@ function onSignInSubmit() {
     
     
     $('#getcode').on('click', function () {
-        console.log('sadsad');
+        $("#getcode").hide();
+        
         $("#time_for_otp").show();
 
         var phoneNo = $('#number').val();
