@@ -2,13 +2,13 @@ $(document).ready(function() {
 
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-        apiKey: "AIzaSyBmUWXG5UACFELFE5R0p_QOZVqsPgvDUHo",
-        authDomain: "otp-app-b25e9.firebaseapp.com",
-        projectId: "otp-app-b25e9",
-        storageBucket: "otp-app-b25e9.appspot.com",
-        messagingSenderId: "349704482557",
-        appId: "1:349704482557:web:68aa3fcd2682ec5cc59894",
-        measurementId: "G-N9VGY0494M"
+        apiKey: "AIzaSyBH0fqIs63NTnDad1--dyOpFQwSzqV6ck0",
+        authDomain: "otp-app-21f2b.firebaseapp.com",
+        projectId: "otp-app-21f2b",
+        storageBucket: "otp-app-21f2b.appspot.com",
+        messagingSenderId: "204588786339",
+        appId: "1:204588786339:web:4d07a50606468013be5516",
+        measurementId: "G-79Q7NEFNT2"
     };
 
     // Initialize Firebase
@@ -60,13 +60,13 @@ function onSignInSubmit() {
     
     
     $('#getcode').on('click', function () {
-        $("#getcode").hide();
-        
+        $("#getcode").hide();        
         $("#time_for_otp").show();
-
+        $("#verifPhNum").show();
+        
         var phoneNo = $('#number').val();
         console.log(phoneNo);
-        // getCode(phoneNo);
+        
         var appVerifier = window.recaptchaVerifier;
         firebase.auth().signInWithPhoneNumber(phoneNo, appVerifier)
         .then(function (confirmationResult) {
